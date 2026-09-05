@@ -3,14 +3,171 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mon site</title>
+  <title>Atelier Ocade — Studio de création</title>
+  <meta name="description" content="Atelier Ocade, studio de création. Identité, direction artistique et conception web.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <h1>Mon site</h1>
-    <p>Page de départ. Le contenu arrive.</p>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="#accueil">
+        <span class="logo-mark" aria-hidden="true"></span>
+        Atelier&nbsp;Ocade
+      </a>
+
+      <button class="burger" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="nav" class="nav">
+        <a href="#savoir-faire">Savoir-faire</a>
+        <a href="#projets">Projets</a>
+        <a href="#atelier">L'atelier</a>
+        <a class="nav-cta" href="#contact">Nous écrire</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section id="accueil" class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Studio de création — depuis 2019</p>
+        <h1>Nous donnons une forme aux idées qui tiennent debout.</h1>
+        <p class="lede">
+          Identité visuelle, direction artistique et conception web. Nous travaillons
+          avec des structures qui préfèrent la justesse à l'esbroufe.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projets">Voir les projets</a>
+          <a class="btn btn-ghost" href="#contact">Parler d'un projet</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="savoir-faire" class="section">
+      <div class="wrap">
+        <h2 class="section-title">Savoir-faire</h2>
+        <div class="grid grid-3">
+          <article class="card">
+            <span class="card-num">01</span>
+            <h3>Identité</h3>
+            <p>Logotype, système graphique, charte et déclinaisons. Une marque qui reste lisible partout, du papier à l'écran.</p>
+          </article>
+          <article class="card">
+            <span class="card-num">02</span>
+            <h3>Direction artistique</h3>
+            <p>Univers visuel, photographie, mise en page. Nous fixons un cap et nous nous y tenons, projet après projet.</p>
+          </article>
+          <article class="card">
+            <span class="card-num">03</span>
+            <h3>Web</h3>
+            <p>Conception, design et intégration. Des sites sobres, rapides et accessibles, faits pour durer sans maintenance lourde.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projets" class="section section-alt">
+      <div class="wrap">
+        <h2 class="section-title">Projets récents</h2>
+        <div class="grid grid-2">
+          <article class="projet">
+            <div class="projet-visuel" data-teinte="a" aria-hidden="true"></div>
+            <div class="projet-texte">
+              <p class="meta">Identité · 2025</p>
+              <h3>Maison Verrier</h3>
+              <p>Refonte complète de l'identité d'une maison de verre soufflé, du logotype à la signalétique d'atelier.</p>
+            </div>
+          </article>
+          <article class="projet">
+            <div class="projet-visuel" data-teinte="b" aria-hidden="true"></div>
+            <div class="projet-texte">
+              <p class="meta">Site web · 2025</p>
+              <h3>Fonderie du Nord</h3>
+              <p>Site vitrine et catalogue technique. Chargement sous la seconde, consultable depuis l'atelier.</p>
+            </div>
+          </article>
+          <article class="projet">
+            <div class="projet-visuel" data-teinte="c" aria-hidden="true"></div>
+            <div class="projet-texte">
+              <p class="meta">Direction artistique · 2024</p>
+              <h3>Festival Terrain</h3>
+              <p>Univers visuel d'un festival itinérant : affiches, programme, habillage des lieux.</p>
+            </div>
+          </article>
+          <article class="projet">
+            <div class="projet-visuel" data-teinte="d" aria-hidden="true"></div>
+            <div class="projet-texte">
+              <p class="meta">Édition · 2024</p>
+              <h3>Revue Contour</h3>
+              <p>Maquette et direction artistique d'une revue trimestrielle d'architecture, quatre numéros parus.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="atelier" class="section">
+      <div class="wrap atelier-inner">
+        <div>
+          <h2 class="section-title">L'atelier</h2>
+          <p>
+            Atelier Ocade réunit trois personnes et quelques complices réguliers.
+            Nous prenons peu de projets à la fois, pour pouvoir les mener jusqu'au bout.
+          </p>
+          <p>
+            Chaque projet démarre par une conversation, pas par un devis. Nous cherchons
+            d'abord à comprendre ce que vous faites — le reste en découle.
+          </p>
+        </div>
+        <dl class="chiffres">
+          <div><dt>Projets livrés</dt><dd>48</dd></div>
+          <div><dt>Années d'atelier</dt><dd>6</dd></div>
+          <div><dt>Clients fidèles</dt><dd>19</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-contact">
+      <div class="wrap">
+        <h2 class="section-title">Parlons de votre projet</h2>
+        <p class="lede">
+          Décrivez-nous ce que vous avez en tête. Nous répondons sous deux jours ouvrés.
+        </p>
+        <form class="form" novalidate>
+          <div class="champ">
+            <label for="nom">Nom</label>
+            <input id="nom" name="nom" type="text" autocomplete="name" required>
+          </div>
+          <div class="champ">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="champ champ-large">
+            <label for="message">Votre projet</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <div class="champ-large form-pied">
+            <button class="btn btn-primary" type="submit">Envoyer</button>
+            <p class="form-note" role="status"></p>
+          </div>
+        </form>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span data-annee></span> Atelier Ocade — Tous droits réservés</p>
+      <p class="footer-liens">
+        <a href="#accueil">Haut de page</a>
+        <a href="https://github.com/atelier-ocade/site-web">Code source</a>
+      </p>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
