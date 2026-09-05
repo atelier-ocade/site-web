@@ -1,0 +1,9 @@
+:root { color-scheme: light dark; }
+body {
+  margin: 0;
+  font: 16px/1.6 system-ui, sans-serif;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+main { padding: 2rem; max-width: 40rem; }
