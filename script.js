@@ -57,41 +57,6 @@
     sections.forEach(function (s) { observateur.observe(s); });
   }
 
-  /* --- Formulaire de contact ---------------------------------------------
-     Demo : aucune donnee n'est envoyee. Brancher ici un service de
-     formulaire (Formspree, Netlify Forms) ou votre propre endpoint. */
-
-  var form = document.querySelector('.form');
-
-  if (form) {
-    var note = form.querySelector('.form-note');
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      var champs = form.querySelectorAll('input, textarea');
-      var premierInvalide = null;
-
-      champs.forEach(function (champ) {
-        var valide = champ.checkValidity();
-        champ.setAttribute('aria-invalid', String(!valide));
-        if (!valide && !premierInvalide) premierInvalide = champ;
-      });
-
-      if (premierInvalide) {
-        note.textContent = 'Merci de completer les champs manquants.';
-        note.classList.remove('est-ok');
-        premierInvalide.focus();
-        return;
-      }
-
-      note.textContent = 'Message pris en compte (demo : rien n’est envoye).';
-      note.classList.add('est-ok');
-      form.reset();
-      champs.forEach(function (champ) { champ.removeAttribute('aria-invalid'); });
-    });
-  }
-
   /* --- Visionneuse de la galerie ------------------------------------------
      Sans JavaScript, les liens ouvrent simplement l'image en grand. */
 
