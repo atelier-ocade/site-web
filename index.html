@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Atelier Ocade — Studio de création</title>
-  <meta name="description" content="Atelier Ocade, studio de création. Identité, direction artistique et conception web.">
-  <link rel="stylesheet" href="style.css">
+  <title>Atelier Ocade — Créations personnalisées</title>
+  <meta name="description" content="Atelier Ocade : cadeaux personnalisés et créations uniques. Illustration, sublimation et gravure laser — portraits, mugs, textiles et objets en bois.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="icon" href="IMAGES/web/LOGO_AO.webp">
 </head>
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
 
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="logo" href="#accueil">
-        <span class="logo-mark" aria-hidden="true"></span>
-        Atelier&nbsp;Ocade
+      <a class="logo" href="#accueil" aria-label="Atelier Ocade — accueil">
+        <img src="IMAGES/web/LOGO_AO.webp" alt="Atelier Ocade">
       </a>
 
       <button class="burger" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
@@ -22,120 +25,185 @@
       </button>
 
       <nav id="nav" class="nav">
-        <a href="#savoir-faire">Savoir-faire</a>
-        <a href="#projets">Projets</a>
-        <a href="#atelier">L'atelier</a>
-        <a class="nav-cta" href="#contact">Nous écrire</a>
+        <a href="#a-propos">À propos</a>
+        <a href="#boutique">Boutique</a>
+        <a href="#numerique">Créations numériques</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contacts">Contacts</a>
       </nav>
     </div>
   </header>
 
   <main id="contenu">
+
     <section id="accueil" class="hero">
-      <div class="wrap">
-        <p class="eyebrow">Studio de création — depuis 2019</p>
-        <h1>Nous donnons une forme aux idées qui tiennent debout.</h1>
-        <p class="lede">
-          Identité visuelle, direction artistique et conception web. Nous travaillons
-          avec des structures qui préfèrent la justesse à l'esbroufe.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projets">Voir les projets</a>
-          <a class="btn btn-ghost" href="#contact">Parler d'un projet</a>
+      <div class="wrap hero-inner">
+        <figure class="hero-visuel">
+          <img src="IMAGES/web/HOME_01.webp" alt="Vos photos transformées en illustration imprimée sur une tasse émaillée">
+        </figure>
+        <div class="hero-marque">
+          <img class="hero-logo" src="IMAGES/web/LOGO_AO.webp" alt="Atelier Ocade">
+          <hr class="filet">
+          <p class="baseline">Créations personnalisées<br>pour des moments uniques</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#boutique">Découvrir la boutique</a>
+            <a class="btn btn-ghost" href="#contacts">Demander un devis</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="savoir-faire" class="section">
+    <section id="a-propos" class="section">
       <div class="wrap">
-        <h2 class="section-title">Savoir-faire</h2>
-        <div class="grid grid-3">
-          <article class="card">
-            <span class="card-num">01</span>
-            <h3>Identité</h3>
-            <p>Logotype, système graphique, charte et déclinaisons. Une marque qui reste lisible partout, du papier à l'écran.</p>
-          </article>
-          <article class="card">
-            <span class="card-num">02</span>
-            <h3>Direction artistique</h3>
-            <p>Univers visuel, photographie, mise en page. Nous fixons un cap et nous nous y tenons, projet après projet.</p>
-          </article>
-          <article class="card">
-            <span class="card-num">03</span>
-            <h3>Web</h3>
-            <p>Conception, design et intégration. Des sites sobres, rapides et accessibles, faits pour durer sans maintenance lourde.</p>
-          </article>
+        <div class="panneau">
+          <h2 class="panneau-titre">À propos d'<strong>Atelier Ocade</strong></h2>
+          <div class="panneau-logo"><img src="IMAGES/web/LOGO_AO.webp" alt=""></div>
+          <div class="panneau-texte">
+            <p>Atelier Ocade est un petit atelier créatif dédié aux cadeaux personnalisés et aux créations uniques.</p>
+            <p>Chaque création part d'une histoire, d'un souvenir ou d'une personne que l'on souhaite célébrer. Une photo, un prénom, une date ou une idée peuvent ainsi devenir un objet personnel, imaginé pour être offert, conservé et aimé.</p>
+            <p>À l'atelier, je crée et personnalise différents supports à travers l'illustration, la sublimation et la gravure laser : portraits personnalisés, mugs, textiles, objets en bois et autres petites créations réalisées avec soin.</p>
+            <p>Derrière Atelier Ocade, il y a l'envie de créer simplement, avec attention et sensibilité, loin des objets impersonnels produits en série.<br>Parce que les plus beaux cadeaux sont ceux qui racontent une histoire.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="projets" class="section section-alt">
+    <section id="boutique" class="section">
       <div class="wrap">
-        <h2 class="section-title">Projets récents</h2>
-        <div class="grid grid-2">
-          <article class="projet">
-            <div class="projet-visuel" data-teinte="a" aria-hidden="true"></div>
-            <div class="projet-texte">
-              <p class="meta">Identité · 2025</p>
-              <h3>Maison Verrier</h3>
-              <p>Refonte complète de l'identité d'une maison de verre soufflé, du logotype à la signalétique d'atelier.</p>
-            </div>
+        <h2 class="section-titre">Boutique</h2>
+        <p class="section-chapo">Des supports variés, tous personnalisables à partir de vos photos et de vos mots.</p>
+        <div class="grille grille-3">
+          <article class="carte">
+            <div class="carte-visuel" data-teinte="a" aria-hidden="true"></div>
+            <h3>Mugs &amp; tasses</h3>
+            <p>Tasse émaillée ou céramique, illustrée avec votre famille, vos animaux et leurs prénoms.</p>
+            <p class="prix">à partir de 24 €</p>
           </article>
-          <article class="projet">
-            <div class="projet-visuel" data-teinte="b" aria-hidden="true"></div>
-            <div class="projet-texte">
-              <p class="meta">Site web · 2025</p>
-              <h3>Fonderie du Nord</h3>
-              <p>Site vitrine et catalogue technique. Chargement sous la seconde, consultable depuis l'atelier.</p>
-            </div>
+          <article class="carte">
+            <div class="carte-visuel" data-teinte="b" aria-hidden="true"></div>
+            <h3>Textiles</h3>
+            <p>T-shirts, tote bags et sweats personnalisés par sublimation, en pièce unique ou en petite série.</p>
+            <p class="prix">à partir de 29 €</p>
           </article>
-          <article class="projet">
-            <div class="projet-visuel" data-teinte="c" aria-hidden="true"></div>
-            <div class="projet-texte">
-              <p class="meta">Direction artistique · 2024</p>
-              <h3>Festival Terrain</h3>
-              <p>Univers visuel d'un festival itinérant : affiches, programme, habillage des lieux.</p>
-            </div>
-          </article>
-          <article class="projet">
-            <div class="projet-visuel" data-teinte="d" aria-hidden="true"></div>
-            <div class="projet-texte">
-              <p class="meta">Édition · 2024</p>
-              <h3>Revue Contour</h3>
-              <p>Maquette et direction artistique d'une revue trimestrielle d'architecture, quatre numéros parus.</p>
-            </div>
+          <article class="carte">
+            <div class="carte-visuel" data-teinte="c" aria-hidden="true"></div>
+            <h3>Objets en bois</h3>
+            <p>Gravure laser sur planches, boîtes, décorations et cadeaux de naissance ou de mariage.</p>
+            <p class="prix">à partir de 19 €</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="atelier" class="section">
-      <div class="wrap atelier-inner">
+    <section id="numerique" class="section section-alt">
+      <div class="wrap">
+        <h2 class="section-titre">Créations numériques</h2>
+        <p class="section-chapo">Vos illustrations en fichier numérique, livrées par email et prêtes à imprimer.</p>
+        <div class="grille grille-3">
+          <article class="carte carte-simple">
+            <span class="carte-num">01</span>
+            <h3>Portrait illustré</h3>
+            <p>Votre photo redessinée à la main, livrée en haute définition (PNG et PDF).</p>
+            <p class="prix">à partir de 35 €</p>
+          </article>
+          <article class="carte carte-simple">
+            <span class="carte-num">02</span>
+            <h3>Affiche personnalisée</h3>
+            <p>Prénoms, dates, citation : une affiche composée sur mesure, à imprimer où vous voulez.</p>
+            <p class="prix">à partir de 22 €</p>
+          </article>
+          <article class="carte carte-simple">
+            <span class="carte-num">03</span>
+            <h3>Carte &amp; faire-part</h3>
+            <p>Naissance, mariage, anniversaire : un modèle unique, décliné selon vos besoins.</p>
+            <p class="prix">à partir de 18 €</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galerie" class="section">
+      <div class="wrap">
+        <h2 class="section-titre">Galerie</h2>
+        <p class="section-chapo">Dessins au graphite réalisés à l'atelier. Cliquez sur une œuvre pour l'agrandir.</p>
+        <div class="galerie">
+          <figure>
+            <a href="IMAGES/web/galerie/01-hd.webp" data-agrandir>
+              <img src="IMAGES/web/galerie/01.webp" alt="Trois vases en terre cuite, dessin au graphite" loading="lazy" width="1000" height="1422">
+            </a>
+            <figcaption>Vases en terre</figcaption>
+          </figure>
+          <figure>
+            <a href="IMAGES/web/galerie/02-hd.webp" data-agrandir>
+              <img src="IMAGES/web/galerie/02.webp" alt="Citrons et feuillage sur drapé, dessin au graphite" loading="lazy" width="1000" height="1425">
+            </a>
+            <figcaption>Citrons au drapé</figcaption>
+          </figure>
+          <figure>
+            <a href="IMAGES/web/galerie/03-hd.webp" data-agrandir>
+              <img src="IMAGES/web/galerie/03.webp" alt="Verre d'eau posé sur un livre, dessin au graphite" loading="lazy" width="1000" height="1438">
+            </a>
+            <figcaption>Verre et lumière</figcaption>
+          </figure>
+          <figure>
+            <a href="IMAGES/web/galerie/04-hd.webp" data-agrandir>
+              <img src="IMAGES/web/galerie/04.webp" alt="Roses sur fond sombre, dessin au graphite" loading="lazy" width="1000" height="1412">
+            </a>
+            <figcaption>Roses</figcaption>
+          </figure>
+          <figure>
+            <a href="IMAGES/web/galerie/05-hd.webp" data-agrandir>
+              <img src="IMAGES/web/galerie/05.webp" alt="Œuf au plat, couverts et œufs sur une table en bois, dessin au graphite" loading="lazy" width="1000" height="1428">
+            </a>
+            <figcaption>Petit déjeuner</figcaption>
+          </figure>
+          <figure>
+            <a href="IMAGES/web/galerie/06-hd.webp" data-agrandir>
+              <img src="IMAGES/web/galerie/06.webp" alt="Bouilloire émaillée dans une cuisine, dessin au graphite" loading="lazy" width="1000" height="1419">
+            </a>
+            <figcaption>Dans la cuisine</figcaption>
+          </figure>
+          <figure>
+            <a href="IMAGES/web/galerie/07-hd.webp" data-agrandir>
+              <img src="IMAGES/web/galerie/07.webp" alt="Bouteille en verre gravé sur drapé, dessin au graphite" loading="lazy" width="1000" height="1435">
+            </a>
+            <figcaption>Bouteille</figcaption>
+          </figure>
+          <figure>
+            <a href="IMAGES/web/galerie/08-hd.webp" data-agrandir>
+              <img src="IMAGES/web/galerie/08.webp" alt="Canettes de soda écrasées, dessin au graphite" loading="lazy" width="1000" height="706">
+            </a>
+            <figcaption>Canettes</figcaption>
+          </figure>
+          <figure>
+            <a href="IMAGES/web/galerie/09-hd.webp" data-agrandir>
+              <img src="IMAGES/web/galerie/09.webp" alt="Mannequin d'atelier en bois près d'un vase, dessin au graphite" loading="lazy" width="1000" height="706">
+            </a>
+            <figcaption>Mannequin d'atelier</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <div class="visionneuse" hidden>
+      <button class="visionneuse-fermer" type="button" aria-label="Fermer">&times;</button>
+      <button class="visionneuse-prec" type="button" aria-label="Œuvre précédente">&lsaquo;</button>
+      <img alt="">
+      <button class="visionneuse-suiv" type="button" aria-label="Œuvre suivante">&rsaquo;</button>
+      <p class="visionneuse-legende"></p>
+    </div>
+
+    <section id="contacts" class="section section-alt">
+      <div class="wrap contacts-inner">
         <div>
-          <h2 class="section-title">L'atelier</h2>
-          <p>
-            Atelier Ocade réunit trois personnes et quelques complices réguliers.
-            Nous prenons peu de projets à la fois, pour pouvoir les mener jusqu'au bout.
-          </p>
-          <p>
-            Chaque projet démarre par une conversation, pas par un devis. Nous cherchons
-            d'abord à comprendre ce que vous faites — le reste en découle.
-          </p>
+          <h2 class="section-titre">Contacts</h2>
+          <p class="section-chapo">Une idée de cadeau, une question sur un support ? Écrivez-moi, je réponds sous deux jours.</p>
+          <ul class="coordonnees">
+            <li><span>Email</span><a href="mailto:contact@atelierocade.com">contact@atelierocade.com</a></li>
+            <li><span>Instagram</span><a href="https://instagram.com/atelierocade">@atelierocade</a></li>
+            <li><span>Atelier</span>Sur rendez-vous</li>
+          </ul>
         </div>
-        <dl class="chiffres">
-          <div><dt>Projets livrés</dt><dd>48</dd></div>
-          <div><dt>Années d'atelier</dt><dd>6</dd></div>
-          <div><dt>Clients fidèles</dt><dd>19</dd></div>
-        </dl>
-      </div>
-    </section>
-
-    <section id="contact" class="section section-contact">
-      <div class="wrap">
-        <h2 class="section-title">Parlons de votre projet</h2>
-        <p class="lede">
-          Décrivez-nous ce que vous avez en tête. Nous répondons sous deux jours ouvrés.
-        </p>
         <form class="form" novalidate>
           <div class="champ">
             <label for="nom">Nom</label>
@@ -156,18 +224,19 @@
         </form>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <p>© <span data-annee></span> Atelier Ocade — Tous droits réservés</p>
+      <p>© <span data-annee></span> Atelier Ocade — Créations personnalisées</p>
       <p class="footer-liens">
         <a href="#accueil">Haut de page</a>
-        <a href="https://github.com/atelier-ocade/site-web">Code source</a>
+        <a href="#contacts">Contact</a>
       </p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>

@@ -92,6 +92,66 @@
     });
   }
 
+  /* --- Visionneuse de la galerie ------------------------------------------
+     Sans JavaScript, les liens ouvrent simplement l'image en grand. */
+
+  var visionneuse = document.querySelector('.visionneuse');
+  var vues = Array.prototype.slice.call(document.querySelectorAll('.galerie a[data-agrandir]'));
+
+  if (visionneuse && vues.length) {
+    var vImage = visionneuse.querySelector('img');
+    var vLegende = visionneuse.querySelector('.visionneuse-legende');
+    var index = 0;
+    var declencheur = null;
+
+    var afficher = function (i) {
+      index = (i + vues.length) % vues.length;
+      var lien = vues[index];
+      var vignette = lien.querySelector('img');
+      vImage.src = lien.getAttribute('href');
+      vImage.alt = vignette ? vignette.alt : '';
+      vLegende.textContent = lien.parentNode.querySelector('figcaption').textContent;
+    };
+
+    var ouvrir = function (i, source) {
+      declencheur = source;
+      afficher(i);
+      visionneuse.hidden = false;
+      document.body.style.overflow = 'hidden';
+      visionneuse.querySelector('.visionneuse-fermer').focus();
+    };
+
+    var fermer = function () {
+      visionneuse.hidden = true;
+      vImage.removeAttribute('src');
+      document.body.style.overflow = '';
+      if (declencheur) declencheur.focus();
+    };
+
+    vues.forEach(function (lien, i) {
+      lien.addEventListener('click', function (e) {
+        e.preventDefault();
+        ouvrir(i, lien);
+      });
+    });
+
+    visionneuse.querySelector('.visionneuse-fermer').addEventListener('click', fermer);
+    visionneuse.querySelector('.visionneuse-prec').addEventListener('click', function () { afficher(index - 1); });
+    visionneuse.querySelector('.visionneuse-suiv').addEventListener('click', function () { afficher(index + 1); });
+
+    // Un clic sur le fond ferme la visionneuse ; un clic sur l'image ne fait rien.
+    visionneuse.addEventListener('click', function (e) {
+      if (e.target === visionneuse) fermer();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (visionneuse.hidden) return;
+      if (e.key === 'Escape') fermer();
+      if (e.key === 'ArrowLeft') afficher(index - 1);
+      if (e.key === 'ArrowRight') afficher(index + 1);
+    });
+  }
+
   /* --- Annee courante dans le pied de page -------------------------------- */
 
   var annee = document.querySelector('[data-annee]');
