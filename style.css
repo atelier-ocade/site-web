@@ -276,10 +276,33 @@ a { color: inherit; }
 }
 .carte p { margin: 0 0 .5rem; font-size: .92rem; }
 
+.carte-tarifs { cursor: pointer; }
+.carte-tarifs:hover,
+.carte-tarifs:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(110, 127, 98, .16);
+  outline: none;
+}
+.voir-tarifs {
+  margin: .5rem 0 0 !important;
+  color: var(--sauge);
+  text-transform: uppercase;
+  font-size: .78rem !important;
+  font-weight: 600;
+  letter-spacing: .1em;
+}
+.voir-tarifs::after { content: " →"; }
+
 .carte-visuel {
   aspect-ratio: 4 / 3;
   border-radius: 6px;
+  overflow: hidden;
   background: var(--sauge-pale);
+}
+.carte-visuel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .carte-num {
@@ -295,11 +318,6 @@ a { color: inherit; }
   font-size: .78rem !important;
   letter-spacing: .1em;
 }
-
-[data-teinte="a"] { background: var(--sauge-pale); }
-[data-teinte="b"] { background: var(--sauge-clair); }
-[data-teinte="c"] { background: #e6dcc6; }
-[data-teinte="d"] { background: #efe2cd; }
 
 /* ---------- Galerie ---------- */
 
@@ -409,6 +427,80 @@ a { color: inherit; }
 
 @media (max-width: 600px) {
   .visionneuse-prec, .visionneuse-suiv { font-size: 2.25rem; padding: 0; }
+}
+
+/* ---------- Fenêtre de tarifs ---------- */
+
+.fenetre-tarifs {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: rgba(63, 66, 65, .8);
+}
+.fenetre-tarifs[hidden] { display: none; }
+
+.fenetre-tarifs-panneau {
+  position: relative;
+  width: min(100%, 880px);
+  max-height: 100%;
+  overflow-y: auto;
+  background: var(--creme);
+  border-radius: 12px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.fenetre-tarifs-titre {
+  margin: 0 0 1.5rem;
+  color: var(--taupe);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  padding-right: 2rem;
+}
+
+.fenetre-tarifs-fermer {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  border: 0;
+  background: none;
+  color: var(--taupe);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+.fenetre-tarifs-fermer:hover { color: var(--anthracite); }
+
+.fenetre-tarifs-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+/* Une seule piece (ex. visuel de tarifs deja legende) : on evite
+   qu'elle s'etire sur toute la largeur du panneau. */
+.fenetre-tarifs-grille--unique {
+  grid-template-columns: minmax(0, 420px);
+  justify-content: center;
+}
+
+.fenetre-tarifs-grille figure { margin: 0; text-align: center; }
+.fenetre-tarifs-grille img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+  background: var(--sauge-pale);
+}
+.fenetre-tarifs-grille figcaption {
+  margin-top: .6rem;
+  color: var(--anthracite);
+  font-size: .88rem;
+  font-weight: 500;
 }
 
 /* ---------- Contacts ---------- */

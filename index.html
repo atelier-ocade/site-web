@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=8">
   <link rel="icon" href="IMAGES/web/LOGO_AO.webp">
 </head>
 <body>
@@ -71,25 +71,25 @@
     <section id="boutique" class="section">
       <div class="wrap">
         <h2 class="section-titre">Boutique</h2>
-        <p class="section-chapo">Des supports variés, tous personnalisables à partir de vos photos et de vos mots.</p>
+        <p class="section-chapo">Des objets uniques créés à partir de vos photos, prénoms, messages et souvenirs.<br>Mugs · Textiles · Gravures · Illustrations · Objets personnalisés</p>
         <div class="grille grille-3">
-          <article class="carte">
-            <div class="carte-visuel" data-teinte="a" aria-hidden="true"></div>
+          <article class="carte carte-tarifs" data-tarifs="tasses" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="fenetre-tarifs">
+            <div class="carte-visuel"><img src="IMAGES/web/boutique/tasse.webp" alt="Mug personnalisé illustré avec une famille et ses animaux, prénoms inscrits autour" loading="lazy" width="576" height="576"></div>
             <h3>Mugs &amp; tasses</h3>
             <p>Tasse émaillée ou céramique, illustrée avec votre famille, vos animaux et leurs prénoms.</p>
-            <p class="prix">à partir de 24 €</p>
+            <p class="voir-tarifs">Voir les tarifs</p>
           </article>
-          <article class="carte">
-            <div class="carte-visuel" data-teinte="b" aria-hidden="true"></div>
+          <article class="carte carte-tarifs" data-tarifs="textile" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="fenetre-tarifs">
+            <div class="carte-visuel"><img src="IMAGES/web/boutique/textile.webp" alt="T-shirt blanc personnalisé avec une illustration et un prénom" loading="lazy" width="576" height="576"></div>
             <h3>Textiles</h3>
             <p>T-shirts, tote bags et sweats personnalisés par sublimation, en pièce unique ou en petite série.</p>
-            <p class="prix">à partir de 29 €</p>
+            <p class="voir-tarifs">Voir les tarifs</p>
           </article>
-          <article class="carte">
-            <div class="carte-visuel" data-teinte="c" aria-hidden="true"></div>
+          <article class="carte carte-tarifs" data-tarifs="gravures" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="fenetre-tarifs">
+            <div class="carte-visuel"><img src="IMAGES/web/boutique/gravure-laser.webp" alt="Objets en bois gravés au laser : boîtes, planche et dessous-de-verre personnalisés" loading="lazy" width="500" height="500"></div>
             <h3>Objets en bois</h3>
             <p>Gravure laser sur planches, boîtes, décorations et cadeaux de naissance ou de mariage.</p>
-            <p class="prix">à partir de 19 €</p>
+            <p class="voir-tarifs">Voir les tarifs</p>
           </article>
         </div>
       </div>
@@ -104,19 +104,16 @@
             <span class="carte-num">01</span>
             <h3>Portrait illustré</h3>
             <p>Votre photo redessinée à la main, livrée en haute définition (PNG et PDF).</p>
-            <p class="prix">à partir de 35 €</p>
           </article>
           <article class="carte carte-simple">
             <span class="carte-num">02</span>
             <h3>Affiche personnalisée</h3>
             <p>Prénoms, dates, citation : une affiche composée sur mesure, à imprimer où vous voulez.</p>
-            <p class="prix">à partir de 22 €</p>
           </article>
           <article class="carte carte-simple">
             <span class="carte-num">03</span>
             <h3>Carte &amp; faire-part</h3>
             <p>Naissance, mariage, anniversaire : un modèle unique, décliné selon vos besoins.</p>
-            <p class="prix">à partir de 18 €</p>
           </article>
         </div>
       </div>
@@ -205,6 +202,14 @@
       </div>
     </section>
 
+    <div class="fenetre-tarifs" id="fenetre-tarifs" hidden>
+      <div class="fenetre-tarifs-panneau" role="dialog" aria-modal="true" aria-labelledby="fenetre-tarifs-titre">
+        <button class="fenetre-tarifs-fermer" type="button" aria-label="Fermer">&times;</button>
+        <h3 class="fenetre-tarifs-titre" id="fenetre-tarifs-titre"></h3>
+        <div class="fenetre-tarifs-grille"></div>
+      </div>
+    </div>
+
   </main>
 
   <footer class="site-footer">
@@ -217,6 +222,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>

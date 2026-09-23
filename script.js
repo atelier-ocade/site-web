@@ -117,6 +117,107 @@
     });
   }
 
+  /* --- Fenetre de tarifs (ouverte depuis une carte de la Boutique) -------- */
+
+  var TARIFS = {
+    tasses: {
+      titre: 'Mugs & tasses — tarifs',
+      pieces: [
+        { img: 'IMAGES/web/tarifs/tasses/m1.webp', alt: 'M1 — Mug en céramique, 350 ml', prix: 'Prix : 15 € / unité' },
+        { img: 'IMAGES/web/tarifs/tasses/m2.webp', alt: 'M2 — Tasse en céramique noire, 350 ml', prix: 'Prix : 15 € / unité' },
+        { img: 'IMAGES/web/tarifs/tasses/m3.webp', alt: 'M3 — Tasse en céramique, 280 ml', prix: 'Prix : 15 € / unité' },
+        { img: 'IMAGES/web/tarifs/tasses/m4.webp', alt: 'M4 — Mug en céramique mini, 200 ml', prix: 'Prix : 15 € / unité' },
+        { img: 'IMAGES/web/tarifs/tasses/m5.webp', alt: 'M5 — Mug en inox émaillé, 350 ml', prix: 'Prix : 15 € / unité' },
+        { img: 'IMAGES/web/tarifs/tasses/m6.webp', alt: 'M6 — Bouteille de sport, 400 ml', prix: 'Prix : 10 € / unité' },
+        { img: 'IMAGES/web/tarifs/tasses/m7.webp', alt: 'M7 — Gourde double paroi', prix: 'Prix : 17 € / unité' }
+      ]
+    },
+    textile: {
+      titre: 'Textiles — tarifs',
+      pieces: [
+        { img: 'IMAGES/web/tarifs/textile/t1.webp', alt: 'T1 — T-shirt / Polo', prix: 'Prix : 19 € / unité' },
+        { img: 'IMAGES/web/tarifs/textile/t2.webp', alt: 'T2 — Sweat à capuche', prix: 'Prix : 29 € / unité' },
+        { img: 'IMAGES/web/tarifs/textile/t3.webp', alt: 'T3 — Tote bag / Sac', prix: 'Prix : 5 € / unité' }
+      ]
+    },
+    gravures: {
+      titre: 'Objets en bois — tarifs',
+      pieces: [
+        // Les prix figurent deja sur ce visuel, aucune legende ajoutee.
+        { img: 'IMAGES/web/tarifs/gravures/gravures.webp', alt: 'Tarifs des objets en bois gravés au laser : sous-verre avec décapsuleur, pot de bonbons, planche de service' }
+      ]
+    }
+  };
+
+  var fenetreTarifs = document.querySelector('.fenetre-tarifs');
+  var declencheursTarifs = document.querySelectorAll('[data-tarifs]');
+
+  if (fenetreTarifs && declencheursTarifs.length) {
+    var tGrille = fenetreTarifs.querySelector('.fenetre-tarifs-grille');
+    var tTitre = fenetreTarifs.querySelector('.fenetre-tarifs-titre');
+    var tDeclencheur = null;
+
+    var ouvrirTarifs = function (cle, source) {
+      var groupe = TARIFS[cle];
+      if (!groupe) return;
+
+      tDeclencheur = source;
+      tTitre.textContent = groupe.titre;
+      tGrille.innerHTML = '';
+      tGrille.classList.toggle('fenetre-tarifs-grille--unique', groupe.pieces.length === 1);
+
+      groupe.pieces.forEach(function (piece) {
+        var figure = document.createElement('figure');
+        var img = document.createElement('img');
+        img.src = piece.img;
+        img.alt = piece.alt;
+        img.loading = 'lazy';
+        figure.appendChild(img);
+        // Le prix n'est ajouté que si la piece en fournit un : certaines
+        // images (ex. gravures) l'affichent deja dans le visuel.
+        if (piece.prix) {
+          var figcaption = document.createElement('figcaption');
+          figcaption.textContent = piece.prix;
+          figure.appendChild(figcaption);
+        }
+        tGrille.appendChild(figure);
+      });
+
+      fenetreTarifs.hidden = false;
+      document.body.style.overflow = 'hidden';
+      fenetreTarifs.querySelector('.fenetre-tarifs-fermer').focus();
+    };
+
+    var fermerTarifs = function () {
+      fenetreTarifs.hidden = true;
+      tGrille.innerHTML = '';
+      document.body.style.overflow = '';
+      if (tDeclencheur) tDeclencheur.focus();
+    };
+
+    declencheursTarifs.forEach(function (carte) {
+      carte.addEventListener('click', function () {
+        ouvrirTarifs(carte.getAttribute('data-tarifs'), carte);
+      });
+      carte.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          ouvrirTarifs(carte.getAttribute('data-tarifs'), carte);
+        }
+      });
+    });
+
+    fenetreTarifs.querySelector('.fenetre-tarifs-fermer').addEventListener('click', fermerTarifs);
+
+    fenetreTarifs.addEventListener('click', function (e) {
+      if (e.target === fenetreTarifs) fermerTarifs();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (!fenetreTarifs.hidden && e.key === 'Escape') fermerTarifs();
+    });
+  }
+
   /* --- Annee courante dans le pied de page -------------------------------- */
 
   var annee = document.querySelector('[data-annee]');
