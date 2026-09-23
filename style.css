@@ -255,10 +255,13 @@ a { color: inherit; }
 .grille-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 
 .carte {
+  display: block;
   background: var(--creme);
   border: 1px solid var(--sauge-pale);
   border-radius: 10px;
   padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
   transition: transform var(--transition), box-shadow var(--transition);
 }
 .carte:hover {
@@ -283,7 +286,7 @@ a { color: inherit; }
   box-shadow: 0 12px 28px rgba(110, 127, 98, .16);
   outline: none;
 }
-.voir-tarifs {
+.voir-tarifs, .voir-lien {
   margin: .5rem 0 0 !important;
   color: var(--sauge);
   text-transform: uppercase;
@@ -291,7 +294,23 @@ a { color: inherit; }
   font-weight: 600;
   letter-spacing: .1em;
 }
-.voir-tarifs::after { content: " →"; }
+.voir-tarifs::after, .voir-lien::after { content: " →"; }
+
+.carte-etsy .prix { margin-top: .25rem; }
+
+.numerique-note {
+  margin: 2.5rem 0 0;
+  text-align: center;
+}
+.numerique-note a {
+  color: var(--sauge);
+  text-transform: uppercase;
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-decoration: none;
+}
+.numerique-note a:hover { color: var(--taupe-fonce); }
 
 .carte-visuel {
   aspect-ratio: 4 / 3;
@@ -317,6 +336,46 @@ a { color: inherit; }
   text-transform: uppercase;
   font-size: .78rem !important;
   letter-spacing: .1em;
+}
+
+/* ---------- Comment ça marche ---------- */
+
+.comment-marche { margin-top: clamp(3rem, 6vw, 5rem); }
+
+.comment-marche-titre {
+  margin: 0 0 1.5rem;
+  color: var(--taupe);
+  text-transform: uppercase;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-align: center;
+}
+
+.comment-marche-grille {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.comment-marche-video,
+.comment-marche-image { margin: 0; }
+
+.comment-marche-video video {
+  width: 100%;
+  border-radius: 10px;
+  background: var(--anthracite);
+  display: block;
+}
+
+.comment-marche-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+  .comment-marche-grille { grid-template-columns: 1fr; }
 }
 
 /* ---------- Galerie ---------- */
