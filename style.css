@@ -2,6 +2,46 @@
    Palette issue du logo et des maquettes :
    crème, vert sauge, taupe, anthracite. */
 
+/* Polices hebergees localement (sous-ensemble latin, suffisant pour
+   le francais) : aucune requete vers Google Fonts au chargement du
+   site, donc rien a declarer a ce sujet dans la politique de
+   confidentialite. */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("IMAGES/web/polices/poppins-300.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("IMAGES/web/polices/poppins-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("IMAGES/web/polices/poppins-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("IMAGES/web/polices/poppins-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Caveat";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("IMAGES/web/polices/caveat-600.woff2") format("woff2");
+}
+
 :root {
   --creme: #fdf8ea;
   --creme-fonce: #f6efdd;
@@ -201,7 +241,6 @@ a { color: inherit; }
 
 .section-chapo {
   margin: 0 0 2.5rem;
-  max-width: 60ch;
   color: var(--anthracite);
 }
 
@@ -405,11 +444,6 @@ a { color: inherit; }
 }
 .galerie-intro p:last-child { margin-bottom: 0; }
 
-/* Cette phrase suit l'intro sur la meme largeur : sans cela, le
-   max-width de .section-chapo (utile ailleurs pour un chapo court)
-   la fait revenir a la ligne trop tot. */
-#galerie .section-chapo { max-width: none; }
-
 .galerie {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -592,9 +626,44 @@ a { color: inherit; }
   font-weight: 500;
 }
 
-/* ---------- Contacts ---------- */
+/* ---------- Pages legales ---------- */
 
-.contacts-inner { max-width: 46rem; }
+/* Texte long, lu en continu : contrairement aux chapos d'une phrase,
+   une largeur confortable de lecture reste ici preferable a une
+   ligne qui court sur toute la largeur du site. */
+.page-legale { max-width: 72ch; }
+
+.page-legale h3 {
+  margin: 2rem 0 .75rem;
+  color: var(--taupe-fonce);
+  text-transform: uppercase;
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+.page-legale h3:first-child { margin-top: 0; }
+
+.page-legale p {
+  margin: 0 0 1rem;
+  color: var(--anthracite);
+}
+
+.page-legale ul {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+.page-legale li { margin-bottom: .4rem; color: var(--anthracite); }
+
+.page-legale a { color: var(--sauge); }
+
+.page-legale .maj {
+  margin-top: 2.5rem;
+  color: var(--taupe);
+  font-size: .85rem;
+  font-style: italic;
+}
+
+/* ---------- Contacts ---------- */
 
 .coordonnees { list-style: none; margin: 0; padding: 0; }
 .coordonnees li {
@@ -631,7 +700,7 @@ a { color: inherit; }
   color: var(--taupe);
 }
 .footer-inner p { margin: 0; }
-.footer-liens { display: flex; gap: 1.5rem; }
+.footer-liens { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; }
 .footer-liens a { text-decoration: none; }
 .footer-liens a:hover { color: var(--sauge); }
 
