@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=16">
   <link rel="icon" href="IMAGES/web/LOGO_AO.webp">
 </head>
 <body>
@@ -26,9 +26,9 @@
 
       <nav id="nav" class="nav">
         <a href="#a-propos">À propos</a>
-        <a href="#boutique">Boutique</a>
-        <a href="#numerique">Créations numériques</a>
-        <a href="#galerie">Galerie</a>
+        <a href="boutique.html">Boutique</a>
+        <a href="numerique.html">Créations numériques</a>
+        <a href="galerie.html">Galerie</a>
         <a href="#contacts">Contacts</a>
       </nav>
     </div>
@@ -46,7 +46,7 @@
           <hr class="filet">
           <p class="baseline">Créations personnalisées<br>pour des moments uniques</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#boutique">Découvrir la boutique</a>
+            <a class="btn btn-primary" href="boutique.html">Découvrir la boutique</a>
             <a class="btn btn-ghost" href="#contacts">Demander un devis</a>
           </div>
         </div>
@@ -68,149 +68,6 @@
       </div>
     </section>
 
-    <section id="boutique" class="section">
-      <div class="wrap">
-        <h2 class="section-titre">Boutique</h2>
-        <p class="section-chapo">Des objets uniques créés à partir de vos photos, prénoms, messages et souvenirs.<br>Mugs · Textiles · Gravures · Illustrations · Objets personnalisés</p>
-        <div class="grille grille-3">
-          <article class="carte carte-tarifs" data-tarifs="tasses" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="fenetre-tarifs">
-            <div class="carte-visuel"><img src="IMAGES/web/boutique/tasse.webp" alt="Mug personnalisé illustré avec une famille et ses animaux, prénoms inscrits autour" loading="lazy" width="576" height="576"></div>
-            <h3>Mugs &amp; tasses</h3>
-            <p>Tasse émaillée ou céramique, illustrée avec votre famille, vos animaux et leurs prénoms.</p>
-            <p class="voir-tarifs">Voir les tarifs</p>
-          </article>
-          <article class="carte carte-tarifs" data-tarifs="textile" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="fenetre-tarifs">
-            <div class="carte-visuel"><img src="IMAGES/web/boutique/textile.webp" alt="T-shirt blanc personnalisé avec une illustration et un prénom" loading="lazy" width="576" height="576"></div>
-            <h3>Textiles</h3>
-            <p>T-shirts, tote bags et sweats personnalisés par sublimation, en pièce unique ou en petite série.</p>
-            <p class="voir-tarifs">Voir les tarifs</p>
-          </article>
-          <article class="carte carte-tarifs" data-tarifs="gravures" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="fenetre-tarifs">
-            <div class="carte-visuel"><img src="IMAGES/web/boutique/gravure-laser.webp" alt="Objets en bois gravés au laser : boîtes, planche et dessous-de-verre personnalisés" loading="lazy" width="500" height="500"></div>
-            <h3>Objets en bois</h3>
-            <p>Gravure laser sur planches, boîtes, décorations et cadeaux de naissance ou de mariage.</p>
-            <p class="voir-tarifs">Voir les tarifs</p>
-          </article>
-        </div>
-
-        <div class="comment-marche">
-          <h3 class="comment-marche-titre">Comment ça marche</h3>
-          <div class="comment-marche-grille">
-            <div class="comment-marche-video">
-              <video src="IMAGES/web/comment-commander.mp4" controls playsinline preload="metadata">
-                Votre navigateur ne prend pas en charge la vidéo. <a href="IMAGES/web/comment-commander.mp4">Télécharger la vidéo</a>.
-              </video>
-            </div>
-            <figure class="comment-marche-image">
-              <img src="IMAGES/web/comment-commander.webp" alt="Étapes de commande : envoyez votre photo, Atelier Ocade la transforme en illustration imprimée sur votre tasse" loading="lazy" width="576" height="576">
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="numerique" class="section section-alt">
-      <div class="wrap">
-        <h2 class="section-titre">Créations numériques</h2>
-        <p class="section-chapo">Des motifs et illustrations en téléchargement immédiat, disponibles sur ma boutique Etsy.</p>
-        <div class="grille grille-3">
-          <a class="carte carte-etsy" href="https://www.etsy.com/fr/listing/4397331436/sushi-collection-cute-minimalist" target="_blank" rel="noopener">
-            <div class="carte-visuel"><img src="IMAGES/web/numerique/sushi.webp" alt="Sushi Collection — motifs sans couture sushis, minimalistes et mignons" loading="lazy" width="800" height="800"></div>
-            <h3>Sushi Collection</h3>
-            <p>Motifs sans couture sushis, style minimaliste et mignon — 4 fichiers JPG haute résolution.</p>
-            <p class="prix">2,87 €</p>
-            <p class="voir-lien">Voir sur Etsy</p>
-          </a>
-          <a class="carte carte-etsy" href="https://www.etsy.com/fr/listing/4403102372/alien-poster-seamless-pattern-bundle-o" target="_blank" rel="noopener">
-            <div class="carte-visuel"><img src="IMAGES/web/numerique/alien.webp" alt="Alien Poster & Seamless Pattern Bundle — affiche et motif extraterrestres" loading="lazy" width="800" height="800"></div>
-            <h3>Alien Poster &amp; Pattern</h3>
-            <p>Affiche « Take Me to Your Dealer » et motif sans couture assorti, univers spatial et décalé.</p>
-            <p class="prix">2,70 €</p>
-            <p class="voir-lien">Voir sur Etsy</p>
-          </a>
-          <a class="carte carte-etsy" href="https://www.etsy.com/fr/listing/4408430666/boho-house-seamless-pattern-boho-village" target="_blank" rel="noopener">
-            <div class="carte-visuel"><img src="IMAGES/web/numerique/boho.webp" alt="Boho House Seamless Pattern — village de maisons aquarelle style boho" loading="lazy" width="800" height="800"></div>
-            <h3>Boho House Pattern</h3>
-            <p>Village de maisons cosy en aquarelle, esprit boho-scandinave — 6 coloris disponibles.</p>
-            <p class="prix">2,87 €</p>
-            <p class="voir-lien">Voir sur Etsy</p>
-          </a>
-        </div>
-        <p class="numerique-note"><a href="https://www.etsy.com/fr/shop/Ocade" target="_blank" rel="noopener">Voir toute la boutique Etsy →</a></p>
-      </div>
-    </section>
-
-    <section id="galerie" class="section">
-      <div class="wrap">
-        <h2 class="section-titre">Galerie</h2>
-        <p class="section-chapo">Dessins au graphite réalisés à l'atelier. Cliquez sur une œuvre pour l'agrandir.</p>
-        <div class="galerie">
-          <figure>
-            <a href="IMAGES/web/galerie/01-hd.webp" data-agrandir>
-              <img src="IMAGES/web/galerie/01.webp" alt="Trois vases en terre cuite, dessin au graphite" loading="lazy" width="1000" height="1422">
-            </a>
-            <figcaption>Vases en terre</figcaption>
-          </figure>
-          <figure>
-            <a href="IMAGES/web/galerie/02-hd.webp" data-agrandir>
-              <img src="IMAGES/web/galerie/02.webp" alt="Citrons et feuillage sur drapé, dessin au graphite" loading="lazy" width="1000" height="1425">
-            </a>
-            <figcaption>Citrons au drapé</figcaption>
-          </figure>
-          <figure>
-            <a href="IMAGES/web/galerie/03-hd.webp" data-agrandir>
-              <img src="IMAGES/web/galerie/03.webp" alt="Verre d'eau posé sur un livre, dessin au graphite" loading="lazy" width="1000" height="1438">
-            </a>
-            <figcaption>Verre et lumière</figcaption>
-          </figure>
-          <figure>
-            <a href="IMAGES/web/galerie/04-hd.webp" data-agrandir>
-              <img src="IMAGES/web/galerie/04.webp" alt="Roses sur fond sombre, dessin au graphite" loading="lazy" width="1000" height="1412">
-            </a>
-            <figcaption>Roses</figcaption>
-          </figure>
-          <figure>
-            <a href="IMAGES/web/galerie/05-hd.webp" data-agrandir>
-              <img src="IMAGES/web/galerie/05.webp" alt="Œuf au plat, couverts et œufs sur une table en bois, dessin au graphite" loading="lazy" width="1000" height="1428">
-            </a>
-            <figcaption>Petit déjeuner</figcaption>
-          </figure>
-          <figure>
-            <a href="IMAGES/web/galerie/06-hd.webp" data-agrandir>
-              <img src="IMAGES/web/galerie/06.webp" alt="Bouilloire émaillée dans une cuisine, dessin au graphite" loading="lazy" width="1000" height="1419">
-            </a>
-            <figcaption>Dans la cuisine</figcaption>
-          </figure>
-          <figure>
-            <a href="IMAGES/web/galerie/07-hd.webp" data-agrandir>
-              <img src="IMAGES/web/galerie/07.webp" alt="Bouteille en verre gravé sur drapé, dessin au graphite" loading="lazy" width="1000" height="1435">
-            </a>
-            <figcaption>Bouteille</figcaption>
-          </figure>
-          <figure>
-            <a href="IMAGES/web/galerie/08-hd.webp" data-agrandir>
-              <img src="IMAGES/web/galerie/08.webp" alt="Canettes de soda écrasées, dessin au graphite" loading="lazy" width="1000" height="706">
-            </a>
-            <figcaption>Canettes</figcaption>
-          </figure>
-          <figure>
-            <a href="IMAGES/web/galerie/09-hd.webp" data-agrandir>
-              <img src="IMAGES/web/galerie/09.webp" alt="Mannequin d'atelier en bois près d'un vase, dessin au graphite" loading="lazy" width="1000" height="706">
-            </a>
-            <figcaption>Mannequin d'atelier</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <div class="visionneuse" hidden>
-      <button class="visionneuse-fermer" type="button" aria-label="Fermer">&times;</button>
-      <button class="visionneuse-prec" type="button" aria-label="Œuvre précédente">&lsaquo;</button>
-      <img alt="">
-      <button class="visionneuse-suiv" type="button" aria-label="Œuvre suivante">&rsaquo;</button>
-      <p class="visionneuse-legende"></p>
-    </div>
-
     <section id="contacts" class="section section-alt">
       <div class="wrap contacts-inner">
         <h2 class="section-titre">Contacts</h2>
@@ -222,14 +79,6 @@
         </ul>
       </div>
     </section>
-
-    <div class="fenetre-tarifs" id="fenetre-tarifs" hidden>
-      <div class="fenetre-tarifs-panneau" role="dialog" aria-modal="true" aria-labelledby="fenetre-tarifs-titre">
-        <button class="fenetre-tarifs-fermer" type="button" aria-label="Fermer">&times;</button>
-        <h3 class="fenetre-tarifs-titre" id="fenetre-tarifs-titre"></h3>
-        <div class="fenetre-tarifs-grille"></div>
-      </div>
-    </div>
 
   </main>
 

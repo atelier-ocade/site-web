@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boutique — Atelier Ocade</title>
+  <meta name="description" content="Boutique Atelier Ocade : mugs, tasses, textiles et objets en bois personnalisés à partir de vos photos. Tarifs, exemples et comment commander.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=16">
+  <link rel="icon" href="IMAGES/web/LOGO_AO.webp">
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="index.html" aria-label="Atelier Ocade — accueil">
+        <img src="IMAGES/web/LOGO_AO.webp" alt="Atelier Ocade">
+      </a>
+
+      <button class="burger" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="nav" class="nav">
+        <a href="index.html#a-propos">À propos</a>
+        <a href="boutique.html" class="est-actif" aria-current="page">Boutique</a>
+        <a href="numerique.html">Créations numériques</a>
+        <a href="galerie.html">Galerie</a>
+        <a href="index.html#contacts">Contacts</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <section id="boutique" class="section">
+      <div class="wrap">
+        <h2 class="section-titre">Boutique</h2>
+        <p class="section-chapo">Des objets uniques créés à partir de vos photos, prénoms, messages et souvenirs.<br>Mugs · Textiles · Gravures · Illustrations · Objets personnalisés</p>
+        <div class="grille grille-3">
+          <article class="carte carte-tarifs" data-tarifs="tasses" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="fenetre-tarifs">
+            <div class="carte-visuel"><img src="IMAGES/web/boutique/tasse.webp" alt="Mug personnalisé illustré avec une famille et ses animaux, prénoms inscrits autour" loading="lazy" width="576" height="576"></div>
+            <h3>Mugs &amp; tasses</h3>
+            <p>Tasse émaillée ou céramique, illustrée avec votre famille, vos animaux et leurs prénoms.</p>
+            <p class="voir-tarifs">Voir les tarifs</p>
+          </article>
+          <article class="carte carte-tarifs" data-tarifs="textile" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="fenetre-tarifs">
+            <div class="carte-visuel"><img src="IMAGES/web/boutique/textile.webp" alt="T-shirt blanc personnalisé avec une illustration et un prénom" loading="lazy" width="576" height="576"></div>
+            <h3>Textiles</h3>
+            <p>T-shirts, tote bags et sweats personnalisés par sublimation, en pièce unique ou en petite série.</p>
+            <p class="voir-tarifs">Voir les tarifs</p>
+          </article>
+          <article class="carte carte-tarifs" data-tarifs="gravures" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="fenetre-tarifs">
+            <div class="carte-visuel"><img src="IMAGES/web/boutique/gravure-laser.webp" alt="Objets en bois gravés au laser : boîtes, planche et dessous-de-verre personnalisés" loading="lazy" width="500" height="500"></div>
+            <h3>Objets en bois</h3>
+            <p>Gravure laser sur planches, boîtes, décorations et cadeaux de naissance ou de mariage.</p>
+            <p class="voir-tarifs">Voir les tarifs</p>
+          </article>
+        </div>
+
+        <div class="comment-marche">
+          <h3 class="comment-marche-titre">Comment ça marche</h3>
+          <div class="comment-marche-grille">
+            <div class="comment-marche-video">
+              <video src="IMAGES/web/comment-commander.mp4" controls playsinline preload="metadata">
+                Votre navigateur ne prend pas en charge la vidéo. <a href="IMAGES/web/comment-commander.mp4">Télécharger la vidéo</a>.
+              </video>
+            </div>
+            <figure class="comment-marche-image">
+              <img src="IMAGES/web/comment-commander.webp" alt="Étapes de commande : envoyez votre photo, Atelier Ocade la transforme en illustration imprimée sur votre tasse" loading="lazy" width="576" height="576">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="fenetre-tarifs" id="fenetre-tarifs" hidden>
+      <div class="fenetre-tarifs-panneau" role="dialog" aria-modal="true" aria-labelledby="fenetre-tarifs-titre">
+        <button class="fenetre-tarifs-fermer" type="button" aria-label="Fermer">&times;</button>
+        <h3 class="fenetre-tarifs-titre" id="fenetre-tarifs-titre"></h3>
+        <div class="fenetre-tarifs-grille"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span data-annee></span> Atelier Ocade — Créations personnalisées</p>
+      <p class="footer-liens">
+        <a href="index.html">Haut de page</a>
+        <a href="index.html#contacts">Contact</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=8"></script>
+</body>
+</html>

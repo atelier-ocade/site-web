@@ -369,16 +369,46 @@ a { color: inherit; }
   display: block;
 }
 
+/* Le visuel ne depasse jamais sa resolution source (576px) : au-dela,
+   l'agrandir le rendrait flou/pixelise sur les ecrans retina. Le cadre
+   garde les proportions et comble l'espace restant avec le fond creme. */
+.comment-marche-image {
+  background: var(--creme-fonce);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
 .comment-marche-image img {
   width: 100%;
-  border-radius: 10px;
+  max-width: 480px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 @media (max-width: 800px) {
   .comment-marche-grille { grid-template-columns: 1fr; }
+  .comment-marche-image img { max-width: 300px; }
 }
 
 /* ---------- Galerie ---------- */
+
+.galerie-intro {
+  margin: 0 0 2rem;
+}
+.galerie-intro p {
+  margin: 0 0 1rem;
+  color: var(--anthracite);
+}
+.galerie-intro p:last-child { margin-bottom: 0; }
+
+/* Cette phrase suit l'intro sur la meme largeur : sans cela, le
+   max-width de .section-chapo (utile ailleurs pour un chapo court)
+   la fait revenir a la ligne trop tot. */
+#galerie .section-chapo { max-width: none; }
 
 .galerie {
   display: grid;
