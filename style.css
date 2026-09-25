@@ -604,8 +604,8 @@ a { color: inherit; }
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1.5rem;
 }
-/* Une seule piece (ex. visuel de tarifs deja legende) : on evite
-   qu'elle s'etire sur toute la largeur du panneau. */
+/* Une seule piece : on evite qu'elle s'etire sur toute la largeur
+   du panneau. */
 .fenetre-tarifs-grille--unique {
   grid-template-columns: minmax(0, 420px);
   justify-content: center;
@@ -625,6 +625,22 @@ a { color: inherit; }
   font-size: .88rem;
   font-weight: 500;
 }
+
+/* Texte explicatif optionnel sous la grille (ex. gravure laser).
+   Masque quand le groupe n'en fournit pas. */
+.fenetre-tarifs-texte {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--sauge-pale);
+  color: var(--anthracite);
+  font-size: .92rem;
+}
+.fenetre-tarifs-texte:empty { display: none; }
+.fenetre-tarifs-texte p { margin: 0 0 .75rem; }
+.fenetre-tarifs-texte ul { margin: 0; padding-left: 1.25rem; }
+.fenetre-tarifs-texte li { margin-bottom: .6rem; }
+.fenetre-tarifs-texte li:last-child { margin-bottom: 0; }
+.fenetre-tarifs-texte strong { color: var(--taupe-fonce); }
 
 /* ---------- Pages legales ---------- */
 

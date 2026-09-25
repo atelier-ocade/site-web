@@ -129,7 +129,7 @@
         { img: 'IMAGES/web/tarifs/tasses/m4.webp', alt: 'M4 — Mug en céramique mini, 200 ml', prix: 'Prix : 15 € / unité' },
         { img: 'IMAGES/web/tarifs/tasses/m5.webp', alt: 'M5 — Mug en inox émaillé, 350 ml', prix: 'Prix : 15 € / unité' },
         { img: 'IMAGES/web/tarifs/tasses/m6.webp', alt: 'M6 — Bouteille de sport, 400 ml', prix: 'Prix : 10 € / unité' },
-        { img: 'IMAGES/web/tarifs/tasses/m7.webp', alt: 'M7 — Gourde double paroi', prix: 'Prix : 17 € / unité' }
+        { img: 'IMAGES/web/tarifs/tasses/m7.webp', alt: 'M7 — Gourde double paroi', prix: 'Prix : 25 € / unité' }
       ]
     },
     textile: {
@@ -143,9 +143,18 @@
     gravures: {
       titre: 'Objets en bois — tarifs',
       pieces: [
-        // Les prix figurent deja sur ce visuel, aucune legende ajoutee.
-        { img: 'IMAGES/web/tarifs/gravures/gravures.webp', alt: 'Tarifs des objets en bois gravés au laser : sous-verre avec décapsuleur, pot de bonbons, planche de service' }
-      ]
+        { img: 'IMAGES/web/tarifs/gravures/g1.webp', alt: 'G1 — Format Mini (surface inférieure à 100 cm²) : sous-verre en bois, décapsuleur, pot de bonbons', prix: 'À partir de 5 €' },
+        { img: 'IMAGES/web/tarifs/gravures/g2.webp', alt: 'G2 — Format Standard (30 × 30 cm maximum) : planches à découper, horloges, panneaux décoratifs', prix: 'À partir de 15 €' }
+      ],
+      // Texte explicatif affiche sous les visuels (contenu statique,
+      // ecrit ici meme : pas de saisie utilisateur).
+      texte:
+        '<p><strong>🪵 Personnalisez vos objets en bois grâce à notre gravure laser haute précision !</strong></p>' +
+        '<p>Nos tarifs s\'adaptent à la taille de votre projet :</p>' +
+        '<ul>' +
+        '<li><strong>Format Mini</strong> (surface inférieure à 100 cm²) : idéal pour les logos simples, les initiales et les petits objets (porte-clés, sous-verre en bambou avec décapsuleur, couvercle en bois). À partir de 5 € seulement !</li>' +
+        '<li><strong>Format Standard</strong> (surface de 100 à 900 cm², soit 30 × 30 cm maximum) : idéal pour les planches à découper, horloges, panneaux décoratifs ou grands logos. À partir de 15 €, selon la complexité du motif.</li>' +
+        '</ul>'
     }
   };
 
@@ -155,6 +164,7 @@
   if (fenetreTarifs && declencheursTarifs.length) {
     var tGrille = fenetreTarifs.querySelector('.fenetre-tarifs-grille');
     var tTitre = fenetreTarifs.querySelector('.fenetre-tarifs-titre');
+    var tTexte = fenetreTarifs.querySelector('.fenetre-tarifs-texte');
     var tDeclencheur = null;
 
     var ouvrirTarifs = function (cle, source) {
@@ -173,8 +183,7 @@
         img.alt = piece.alt;
         img.loading = 'lazy';
         figure.appendChild(img);
-        // Le prix n'est ajouté que si la piece en fournit un : certaines
-        // images (ex. gravures) l'affichent deja dans le visuel.
+        // Le prix n'est ajoute que si la piece en fournit un.
         if (piece.prix) {
           var figcaption = document.createElement('figcaption');
           figcaption.textContent = piece.prix;
@@ -182,6 +191,9 @@
         }
         tGrille.appendChild(figure);
       });
+
+      // Texte optionnel sous la grille ; vide pour les groupes qui n'en ont pas.
+      if (tTexte) tTexte.innerHTML = groupe.texte || '';
 
       fenetreTarifs.hidden = false;
       document.body.style.overflow = 'hidden';
@@ -191,6 +203,7 @@
     var fermerTarifs = function () {
       fenetreTarifs.hidden = true;
       tGrille.innerHTML = '';
+      if (tTexte) tTexte.innerHTML = '';
       document.body.style.overflow = '';
       if (tDeclencheur) tDeclencheur.focus();
     };
